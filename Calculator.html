@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Year Calculator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: rgb(202, 57, 57);
+      overflow: hidden;
+    }
+
+    .happy-new-year {
+      position: absolute;
+      top: 20px;
+      font-size: 32px;
+      font-weight: bold;
+      color: #ff4500;
+      text-align: center;
+      display: none;
+    }
+
+    .calculator {
+      width: 300px;
+      padding: 20px;
+      background: pink;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .display {
+      width: 100%;
+      height: 50px;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      padding: 10px;
+      font-size: 18px;
+      text-align: right;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .button {
+      padding: 20px;
+      background: #ff8080;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .button:hover {
+      background: #ff8080;
+    }
+
+    .falling-flowers {
+      position: absolute;
+      top: -100px;
+      animation: fall 5s linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+      }
+    }
+
+    .flower-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    } 
+
+    #bs{
+      width: 200%;
+    }
+
+    #AC{
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="happy-new-year" id="happyNewYear">🎉 Happy New Year! 🎉</div>
+
+  <div class="calculator">
+    <div class="display" id="display"></div>
+    <div class="buttons">
+      <button class="button" onclick="press('7')">7</button>
+      <button class="button" onclick="press('8')">8</button>
+      <button class="button" onclick="press('9')">9</button>
+      <button class="button" onclick="press('+')">+</button>
+      <button class="button" onclick="press('4')">4</button>
+      <button class="button" onclick="press('5')">5</button>
+      <button class="button" onclick="press('6')">6</button>
+      <button class="button" onclick="press('-')">-</button>
+      <button class="button" onclick="press('1')">1</button>
+      <button class="button" onclick="press('2')">2</button>
+      <button class="button" onclick="press('3')">3</button>
+      <button class="button" onclick="press('*')">*</button>
+      <button class="button" onclick="press('0')">0</button>
+      <button class="button" onclick="press('.')">.</button>
+      <button class="button" onclick="calculate()">=</button>
+      <button class="button" onclick="press('/')">/</button>
+
+      <button class="button" id="AC" onclick="clearDisplay()">C</button>
+      <button class="button" id="bs" onclick="backspace()">⌫</button>
+
+    </div>
+  </div>
+
+  <div class="flower-container" id="flowerContainer"></div>
+
+  <script>
+    const display = document.getElementById('display');
+    const happyNewYear = document.getElementById('happyNewYear');
+    const flowerContainer = document.getElementById('flowerContainer');
+
+    function press(value) {
+      display.innerText += value;
+    }
+
+    function clearDisplay() {
+      display.innerText = '';
+      happyNewYear.style.display = 'none';
+      flowerContainer.innerHTML = ''; 
+    }
+
+    function calculate() {
+      try {
+        const result = eval(display.innerText);
+        display.innerText = result;
+
+        if (result === 2025) {
+          displayHappyNewYear();
+        }
+      } catch {
+        display.innerText = 'Error';
+      }
+    }
+
+    function displayHappyNewYear() {
+      happyNewYear.style.display = 'block';
+
+      // Add falling flowers
+      for (let i = 0; i < 20; i++) {
+        const flower = document.createElement('img');
+        flower.src = 'flower.png'; 
+        flower.classList.add('falling-flowers');
+        flower.style.left = Math.random() * 100 + 'vw'; 
+        flower.style.animationDuration = Math.random() * 2 + 3 + 's'; 
+        flower.style.transform = `scale(${Math.random() * 0.5 + 0.5})`; 
+        flowerContainer.appendChild(flower);
+
+        flower.addEventListener('animationend', () => flower.remove());
+      }
+    }
+     
+
+function backspace() {
+  display.innerText = display.innerText.slice(0, -1);
+}
+
+    
+  </script>
+</body>
+</html>
