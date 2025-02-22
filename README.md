@@ -16,4 +16,4 @@ I’ve built a Smart Calculator using HTML, CSS, and JavaScript, which performs 
 🎯 Who Can Use It?
 🔹 Students learning JavaScript and DOM manipulation.
 🔹 Anyone looking for a fun and interactive calculator.
-🔹 Users who love Easter eggs in web apps!
+🔹 Users who love Easter eggs in web apps!.
