@@ -6,7 +6,7 @@ I’ve built a Smart Calculator using HTML, CSS, and JavaScript, which performs 
 ✅ User-friendly Interface – Simple and responsive design.
 ✅ New Year Easter Egg 🎉 – Displays "Happy New Year 2025" when "2025" is entered.
 ✅ Smooth Animations & UI Effects – Provides an interactive experience.
-✅ Fully Responsive – Works on mobile, tablet, and desktop devices.
+✅ Fully Responsive – Works on mobile, tablet and desktop devices.
 
 🔧 Technologies Used:
 🔹 HTML – For structuring the calculator layout.
