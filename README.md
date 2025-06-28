@@ -1,19 +1,55 @@
-🖩 Smart Calculator – Special New Year Surprise 🎉
-I’ve built a Smart Calculator using HTML, CSS, and JavaScript, which performs standard arithmetic operations. But here’s the fun part – when the user enters "2025", the calculator surprises them with a "Happy New Year 🎊" message!
+# 🔢 Surprise Calculator 🎉
 
-📌 Features Of Smart Calculator :
-✅ Basic Arithmetic Operations – Addition, Subtraction, Multiplication, Division.
-✅ User-friendly Interface – Simple and responsive design.
-✅ New Year Easter Egg 🎉 – Displays "Happy New Year 2025" when "2025" is entered.
-✅ Smooth Animations & UI Effects – Provides an interactive experience.
-✅ Fully Responsive – Works on mobile, tablet and desktop devices.
+This is a fun and interactive web-based **Calculator** built with HTML, CSS, and JavaScript. It performs standard arithmetic operations and contains a **hidden surprise** when the result equals `2025` — it wishes you a **Happy New Year!** 🥳
 
-🔧 Technologies Used:
-🔹 HTML – For structuring the calculator layout.
-🔹 CSS – For designing an elegant and user-friendly interface.
-🔹 JavaScript – For performing calculations and triggering the New Year message.
+---
 
-🎯 Who Can Use It?
-🔹 Students learning JavaScript and DOM manipulation.
-🔹 Anyone looking for a fun and interactive calculator.
-🔹 Users who love Easter eggs in web apps!
+## 🌐 Live Demo
+
+👉 [Try the Calculator Online](https://calculator-lilac-delta-27.vercel.app/)
+
+---
+
+## ✨ Features
+
+- Basic arithmetic operations: `+`, `−`, `×`, `÷`
+- Responsive and user-friendly design
+- 🎊 **Special Feature**: When result = `2025`, it displays a **Happy New Year** message!
+
+---
+
+## 🛠️ Tech Stack
+
+- **HTML5**
+- **CSS3**
+- **JavaScript (Vanilla)**
+
+---
+
+## 📁 Project Structure
+
+📦 calculator
+├── index.html # Main calculator structure
+├── style.css # Stylesheet for layout and design
+└── script.js # Functionality and surprise logic
+
+
+
+---
+
+## 🚀 Getting Started
+
+To run this project locally:
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-username/surprise-calculator.git
+🎉 Surprise Logic
+
+if (result === 2025) {
+  alert("🎉 Happy New Year 2025! 🎉");
+}
+
+
+🙌 Author
+Made with ❤️ by [Danapana Akash Reddy].
